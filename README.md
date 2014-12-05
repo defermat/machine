@@ -12,24 +12,28 @@ There is only one requirement: your Docker version should support the
 ## Quickstart
 
 Build the image:
-```bash
+
+```
 docker build -t machine .
 ```
 
 Run Machine on Docker-in-Docker and get a shell where you can play, and docker daemon logs
 to stdout:
-```bash
+
+```
 docker run --privileged -t -i machine
 ```
 
 Run Machine on Docker-in-Docker and get a shell where you can play, but docker daemon logs
 into `/var/log/docker.log`:
-```bash
+
+```
 docker run --privileged -t -i -e LOG=file machine
 ```
 
 Run Machine on Docker-in-Docker and expose the inside Docker to the outside world:
-```bash
+
+```
 docker run --privileged -d -p 4444 -e PORT=4444 machine
 ```
 
@@ -42,6 +46,7 @@ background and execute a shell for you to play.
 
 You can use the `DOCKER_DAEMON_ARGS` environment variable to configure the
 docker daemon with any extra options:
-```bash
+
+```
 docker run --privileged -d -e DOCKER_DAEMON_ARGS="-D" machine
 ```
